@@ -545,13 +545,13 @@
                 }
             });
         })
-        var onoff = 0;
+        var onoff = 1;
 
         function toggleStream() {
             var linkStreaming = $('#linkStreaming').val();
-            if (onoff == 0) {
+            if (onoff == 1) {
                 onoff = 0;
-                document.getElementById("stream").setAttribute("data", linkStreaming);
+                document.getElementById("stream").setAttribute("data", "");
                 document.getElementById("button-video").innerHTML = "TURN OFF VIDEO";
             } else {
                 onoff = 1;
