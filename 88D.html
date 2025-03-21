@@ -545,16 +545,16 @@
                 }
             });
         })
-        var onoff = 1;
+        var onoff = 0;
 
         function toggleStream() {
             var linkStreaming = $('#linkStreaming').val();
-            if (onoff == 1) {
+            if (onoff == 0) {
                 onoff = 0;
                 document.getElementById("stream").setAttribute("data", linkStreaming);
                 document.getElementById("button-video").innerHTML = "TURN OFF VIDEO";
             } else {
-                onoff = 0;
+                onoff = 1;
                 document.getElementById("stream").setAttribute("data", linkStreaming);
                 document.getElementById("button-video").innerHTML = "TURN ON VIDEO";
             }
