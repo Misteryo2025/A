@@ -554,8 +554,8 @@
                 document.getElementById("stream").setAttribute("data", linkStreaming);
                 document.getElementById("button-video").innerHTML = "TURN OFF VIDEO";
             } else {
-                onoff = 1;
-                document.getElementById("stream").setAttribute("data", "");
+                onoff = 0;
+                document.getElementById("stream").setAttribute("data", linkStreaming);
                 document.getElementById("button-video").innerHTML = "TURN ON VIDEO";
             }
         }
