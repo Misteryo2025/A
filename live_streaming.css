@@ -1,0 +1,136 @@
+.framewrap {
+    height: 260px;
+}
+
+#button-video {
+    top: 337px;
+}
+
+.panel-heading {
+    padding: 8px 0px 0px 0px;
+    background-color: #c2c2c2 !important;
+}
+
+.panel {
+    border: 0px solid !important;
+    margin-bottom: 50px;
+}
+
+div.floating-time>div:nth-child(4) {
+    padding: 0;
+}
+
+div.floating-time>div:nth-child(3) {
+    height: 50px;
+}
+
+.floating-time {
+    height: 62px;
+    z-index: 99;
+
+}
+
+#button-video {
+    z-index: 98;
+}
+
+object {
+    -moz-transform: scale(.5, .5);
+    -webkit-transform: scale(.5, .5);
+    -o-transform: scale(.5, .5);
+    -ms-transform: scale(.5, .5);
+    transform: scale(.5, .5);
+    -moz-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -o-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+}
+
+@media only screen and (orientation: portrait) {
+    object {
+        margin-top: 0;
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    object {
+        margin-top: 0;
+        margin-left: 27%;
+    }
+}
+
+#totalbet {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+#timer {
+    margin-top: 10px;
+}
+
+.header-logo {
+    width: 150px;
+    /*height: 20px;*/
+}
+
+.button-info {
+    color: #fff;
+    border: 2px solid #fff;
+    font-weight: 600;
+    border-radius: 50%;
+    display: flex;
+    margin: auto;
+    margin-right: 0.75rem;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.deploy-logo {
+    display: block;
+    margin: auto;
+    margin-left: 25%;
+    /*margin-left: .75rem;*/
+}
+
+.spacer{
+    height: 70px;
+}
+
+.deploy-back {
+    top: 16px;
+    right: 8px;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.padding-2 {
+    padding: 2px;
+}
+
+.table-nth {
+    font-family: Aller;
+    font-size: 0.77rem;
+}
+
+.w-color {
+    color: #fff;
+}
+
+.col-border-right {
+    border-right: 1px solid grey;
+}
+
+.live-title {
+    font-family: Aller;
+    font-weight: bold;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+}
