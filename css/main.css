@@ -1,0 +1,1276 @@
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: .5em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+@font-face {
+   font-family: Aller;
+   src: url(../fonts/Aller.ttf);
+}
+@font-face {
+   font-family: big_noodle;
+   src: url(../fonts/big_noodle.ttf);
+}
+@font-face {
+   font-family: OpenSans;
+   src: url(../fonts/OpenSans.ttf);
+}
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.all-elements {
+  overflow-x: hidden;
+}
+.page-content {
+  background-color: #2b2b2b;
+  z-index: 10;
+  display: block;
+  min-height: 667px;
+}
+.page-headers {
+  background: #000000;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  z-index: 999999;
+  border-bottom: 1px solid #818285;
+  display: flex;
+}
+.deploy-sidebar {
+  background-image: url(../../img/ui/deploy-nav2.png);
+  background-repeat: no-repeat;
+  background-position: 20px 24px;
+  background-size: 28px 19px;
+  height: 70px;
+  width: 70px;
+  z-index: 50;
+  display: block;
+  position: relative;
+}
+.deploy-back {
+  background-image: url(../../img/ui/deploy-back2.png);
+  background-repeat: no-repeat;
+  background-size: 28px 19px;
+  height: 23px;
+  width: 30px;
+  z-index: 50;
+  top: 10px;
+  right: 15px;
+  display: block;
+  position: relative;
+}
+.deploy-logout {
+  background-image: url(../../img/ui/deploy-logout2.png);
+  background-size: 36px 24px;
+  background-repeat: no-repeat;
+  background-position: 19px 22px;
+  height: 70px;
+  width: 70px;
+  float: right;
+  margin-top: -51px;
+  z-index: 50;
+}
+.deploy-home {
+  background-image: url(../../img/ui/deploy-info.png);
+  background-repeat: no-repeat;
+  background-position: 20px 15px;
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  right: 0;
+  z-index: 50;
+}
+.deploy-logo{
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 12px;
+}
+.header-logo {
+  width: 144px;
+  height: 40px;
+}
+.page-header-clear {
+  height: 70px;
+}
+.content {
+  margin: 0 auto;
+}
+.main {
+  background-color: #ebebeb;
+}
+.no-bottom {
+  margin-bottom: 0px !important;
+}
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+.wrapper {
+  padding: 10px;
+}
+.panel-blue {
+  background: #636363;
+}
+.head-title {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #ffffff;
+}
+.head-title2 {
+  font-size: 20px;
+  margin-top: -22px;
+  margin-bottom: 0;
+  color: #ffffff;
+}
+.head-title3 {
+  font-size: 20px;
+  margin-top: -22px;
+  margin-bottom: 0;
+  color: #ff0000;
+  display: none;
+}
+.stream-wrapper {
+  min-height: 253px;
+  max-height: 330px;
+  background-color: #000;
+}
+.stream-wrapper video {
+  width: 320px;
+  height: 180px;
+  display: block;
+  margin: 0 auto;
+}
+
+.alert-bet{
+  height: 38px;
+  width: 100%;
+  padding: 8px;
+  position: fixed;
+  top: 125px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  z-index: 99;  
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.success{  
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.error{  
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+div.floating-time > div:nth-child(4){
+  margin-left: -8px;
+}
+div.floating-time > div:nth-child(3){
+  height: 37px;
+  width: 28%;
+  left: -7px;
+}
+div.floating-time > div:nth-child(2){
+  width: 37%;
+  left: -10px;
+}
+div.floating-time > div:nth-child(2) tr{
+  border:none;
+}
+div.floating-time > div:nth-child(2) td{
+  font-size: 12px;
+  font-family: Aller;
+}
+div.floating-time > div:nth-child(2) td:nth-child(2){
+  width: 10px;
+  text-align: center;
+}
+div.floating-time > div:nth-child(2) td:last-child{
+  color: white;
+}
+div.floating-time > div:nth-child(2), div.floating-time > div:nth-child(3){
+  border-right: 1px solid #6a6a6a;
+}
+/* Total Bet && Timer */
+div.floating-time > div:nth-child(3) > h1{
+  font-family: Aller;
+  font-weight: bold;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+}
+
+div.floating-time > div:nth-child(3) > p{
+  color: white;
+  font-family: Aller;
+  width: 100%;
+  height: 0;
+  text-align: center;
+  font-size: 10px;
+}
+div.floating-time > div:nth-child(4) > h1{
+  font-family: Aller;
+  font-weight: bold;
+  font-size: 10px;
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+}
+
+div.floating-time > div:nth-child(4) > p{
+  color: white;
+  font-family: Aller;
+  width: 100%;
+  height: 0;
+  font-size: 15px;
+  position: relative;
+  text-align: center;
+}
+.floating-time {
+  background: #2f2f2f;
+  background: -moz-linear-gradient(top, #2f2f2f 17%, #2f2f2f 17%, #010101 100%);
+  background: -webkit-linear-gradient(top, #2f2f2f 17%,#2f2f2f 17%,#010101 100%);
+  background: linear-gradient(to bottom, #2f2f2f 17%,#2f2f2f 17%,#010101 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f2f2f', endColorstr='#010101',GradientType=0 );
+  padding: 5px 0;
+  height: 57px;
+  width: 100%;
+  color: #00bfd5;
+  position: fixed;
+  z-index: 99;
+}
+.mask{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100000;
+    top: -45px;
+    padding-bottom: 45px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.mask #loader{
+    background: url(../img/loader.gif) center center no-repeat;
+    height: 15px;
+    width: 15px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    margin: -25px 0 0 -25px;
+}
+ul.history-list {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+ul.history-list li {
+  margin: 3px;
+  width: 28px;
+  vertical-align: middle;
+  display: inline-block;
+}
+ul.history-list li.last {
+  width: 40px;
+  height: 40px;
+  font-size: 19px;
+  display: inline-block;
+}
+ul.history-list2 {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+ul.history-list2 li {
+  margin: 1px;
+  width: 28px;
+  vertical-align: middle;
+  display: inline-block;
+}
+ul.history-list2 li.last {
+  width: 35px;
+  height: 35px;
+}
+.label {
+  padding: .3em .4em .3em;
+  font-size: 100%;
+  font-weight: 500;
+}
+.label-black {
+  background-color: #000000;
+}
+.label-red {
+  background-color: #ff0000;
+}
+.label-green {
+  background-color: #10b110;
+}
+.bet-panel {
+  margin-right: -10px;
+  margin-left: -10px;
+}
+.bet-panel .btn-bet {
+  width: 100%;
+}
+.bet-panel [class*="col-"] {
+  padding-right: 2px !important;
+  padding-left: 2px !important;
+  margin-bottom: 2px;
+}
+.framewrap {
+  height: 300px;
+}
+#containerworldTime{
+  margin-bottom: 7px;
+}
+#stream{
+    position: absolute;
+    left: 0;
+    top: 126px;
+    width: 200%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#button-video{
+  border-radius: 3px;
+  border: 1px solid #3b7226;
+  font-family: Aller;
+  font-size: 9px;
+  color: white;
+  padding: 6px 0;
+  position: absolute;
+  width: 175px;
+  left: 0;
+  right: 0;
+  top: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.history-ball{
+  width: 40px;
+  height: 40px;
+  font-size: 19px;
+  padding-top: 7px;
+  border-radius: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+  margin: 0px 0px;
+  font-family: Aller;
+  font-size: 13px;
+  color: white;
+  padding: 5px;
+}
+.button-bet{
+  border-radius: 3px;
+  width: 100%;
+  height: 37px;
+  font-family: "OpenSansBold";
+  font-size: 12px;
+  color: white;
+  margin: 2px 2px 2px 0px;
+}
+.button-bet > strong{
+  font-family: OpenSans;
+}
+.btnaction{
+  font-family: Aller;
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  padding: 8px;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.btnaction.disabled{
+  opacity: 0.2;
+}
+li:first-child .rwresult{
+    width: 30px;
+    height: 30px;
+    margin: 4px 0;
+}
+li:first-child .diceresult{
+  width: 30px;
+}
+li:first-child .hntresult{
+  width: 35px;
+  margin: 0px 0px 0px -7px;
+}
+li:first-child .dice6result{
+  width: 40px;
+  margin: 0px 0px 0px -15px;
+}
+.diceresult{
+  display: block;
+  width: 25px;
+}
+.dice6result{
+  display: block;
+  width: 28px;
+}
+.hntresult{
+  display: block;
+  width: 25px;
+}
+.hntimg{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 3px;
+}
+.billiard{
+  width:40px;
+  height:auto;
+}
+.dice4{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+}
+.dice4:first-child{
+  left: -31px;
+  top: 4px;
+}
+.dice4:nth-child(2){
+  left: 28px;
+  top: 4px;
+}
+.dice4:nth-child(3){
+  left: -31px;
+  top: 34px;
+}
+.dice4:nth-child(4){
+  left: 28px;
+  top: 34px;
+}
+.bdice{
+  width: 45px;
+  height: 45px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+.bdice:first-child{
+  top: 4px;
+}
+.bdice:nth-child(2){
+  top: -7px;
+}
+.dice{
+  width: 32px;
+  height: 32px;
+}
+.doubledice,.tripledice{
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 10px;
+}
+.hntb{
+  position: relative;
+  color: black;
+  top: 10px;
+}
+.doubledice:first-child{
+  left: 19%;
+}
+.doubledice:nth-child(2){
+  left: 30%;
+}
+.tripledice:first-child{
+  left: 12%;
+}
+.tripledice:nth-child(2){
+  left: 21%;
+}
+.tripledice:nth-child(3){
+  left: 31%;
+}
+.toto-pic{
+  border: none;
+  border-radius: 5px;
+  background: #303030;
+  width: 100%;
+  height: 58px;
+}
+.toto-transparent{
+  background-color: transparent;
+  border: 0;
+}
+.addheight{
+  height: 50px;
+}
+.squarerw{
+  width: 30px;
+  height: 28px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Aller;
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 3px;
+  border: 1px solid black;
+  color: black;
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+}
+.squarerw2{
+  width: 25px;
+  height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Aller;
+  font-weight: bold;
+  font-size: 12px;
+  padding-top: 3px;
+  margin: 5px;
+  border: 1px solid black;
+  color: black;
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+}
+.toto-clear {
+  visibility: hidden;
+  border-radius: 3px;
+  width: 100%;
+  height: 37px;
+  font-family: "OpenSansBold";
+  font-size: 12px;
+  color: white;
+}
+.toto-white{
+  background: #d3d3d3;
+  background: -moz-linear-gradient(top, #d3d3d3 1%, #5b5959 72%);
+  background: -webkit-linear-gradient(top, #d3d3d3 1%,#5b5959 72%);
+  background: linear-gradient(to bottom, #d3d3d3 1%,#5b5959 72%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3d3d3', endColorstr='#5b5959',GradientType=0 );
+  -webkit-box-shadow: -3px 1px 5px -2px rgba(145,142,142,1);
+  -moz-box-shadow: -3px 1px 5px -2px rgba(145,142,142,1);
+  box-shadow: -3px 1px 5px -2px rgba(145,142,142,1);
+  border: 1px solid #8c8888;
+}
+.toto-black{
+  background: #3c3c3c;
+  background: -moz-linear-gradient(top, #3c3c3c 0%, #191818 72%);
+  background: -webkit-linear-gradient(top, #3c3c3c 0%,#191818 72%);
+  background: linear-gradient(to bottom, #3c3c3c 0%,#191818 72%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c3c3c', endColorstr='#191818',GradientType=0 );
+  -webkit-box-shadow: -3px 1px 5px -2px rgba(42,40,40,1);
+  -moz-box-shadow: -3px 1px 5px -2px rgba(42,40,40,1);
+  box-shadow: -3px 1px 5px -2px rgba(42,40,40,1);
+  border: 1px solid #36413f;
+}
+.toto-red{
+  background: #ba0000;
+  background: -moz-linear-gradient(top, #ba0000 0%, #480000 72%);
+  background: -webkit-linear-gradient(top, #ba0000 0%,#480000 72%);
+  background: linear-gradient(to bottom, #ba0000 0%,#480000 72%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba0000', endColorstr='#480000',GradientType=0 );
+  -webkit-box-shadow: -3px 1px 5px -2px rgba(122,0,0,1);
+  -moz-box-shadow: -3px 1px 5px -2px rgba(122,0,0,1);
+  box-shadow: -3px 1px 5px -2px rgba(122,0,0,1);
+  border: 1px solid #82332f;
+}
+.toto-skyblue{
+  background: #00c9d9;
+  background: -moz-linear-gradient(top, #00c9d9 0%, #005056 72%);
+  background: -webkit-linear-gradient(top, #00c9d9 0%,#005056 72%);
+  background: linear-gradient(to bottom, #00c9d9 0%,#005056 72%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c9d9', endColorstr='#005056',GradientType=0 );
+  border: 1px solid #00838e;
+}
+.toto-green{
+  background: #5ab03b;
+  background: -moz-linear-gradient(top, #5ab03b 0%, #254617 72%);
+  background: -webkit-linear-gradient(top, #5ab03b 0%,#254617 72%);
+  background: linear-gradient(to bottom, #5ab03b 0%,#254617 72%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ab03b', endColorstr='#254617',GradientType=0 );
+  -webkit-box-shadow: -3px 1px 5px -2px rgba(61,117,38,1);
+  -moz-box-shadow: -3px 1px 5px -2px rgba(61,117,38,1);
+  box-shadow: -3px 1px 5px -2px rgba(61,117,38,1);
+  border: 1px solid #41704f;
+}
+.toto-blue{
+  background: #005bb5;
+  background: -moz-linear-gradient(top, #005bb5 0%, #002549 72%);
+  background: -webkit-linear-gradient(top, #005bb5 0%,#002549 72%);
+  background: linear-gradient(to bottom, #005bb5 0%,#002549 72%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005bb5', endColorstr='#002549',GradientType=0 );
+  border: 1px solid #0057ab;
+}
+.toto-gold{
+  background: #f9bc00;
+  background: -moz-linear-gradient(top, #f9bc00 1%, #614800 72%);
+  background: -webkit-linear-gradient(top, #f9bc00 1%,#614800 72%);
+  background: linear-gradient(to bottom, #f9bc00 1%,#614800 72%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9bc00', endColorstr='#614800',GradientType=0 );
+  -webkit-box-shadow: -3px 1px 5px -2px rgba(215,159,0,1);
+  -moz-box-shadow: -3px 1px 5px -2px rgba(215,159,0,1);
+  box-shadow: -2px 1px 5px -2px rgba(215,159,0,1);
+  border: 1px solid #a47900;
+}
+.chips-small{
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  margin: auto;
+  right: 0;
+  left: 0;
+  top: -37px;
+  bottom: 0;
+}
+.chips-smallp{
+  position: absolute;
+  margin: auto;
+  left: 1px;
+  right: 0;
+  bottom: 0;
+  top: -5px;
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+}
+.cbet-center{
+  left: 0;
+}
+.cbetimg-center{
+  left: 0;
+}
+.cbet-n50{
+  left: 90px;
+}
+.cbetimg-n50{
+  left: 90px;
+}
+.cbet-hnt2{
+  top: 0;
+  left: 50px;
+}
+.cbetimg-hnt2{
+  top: -28px;
+  left: 50px;
+}
+.cbet-hnt3{
+  left: 90px;
+}
+.cbetimg-hnt3{
+  left: 90px;
+}
+.cbetimg-d6{
+  left: 28px;
+  top: -30px;
+}
+.cbet-d6{
+  left: 30px;
+  top: 5px;
+}
+.cbetimg-nmr25{
+  top: -37px;
+  left: 0;
+}
+.cbet-nmr25{
+  top: -5px;
+  left: 1px
+}
+.cbetimg-sd{
+  left: 40px;
+}
+.cbet-sd{
+  left: 43px;
+}
+.cbetimg-row3{
+  bottom: 135px;
+}
+.cbet-row3{
+  top: -9px;
+}
+.cbetimg-2dice{
+  top: 0px;
+  left: 1px;
+}
+.cbet-2dice{
+  top: 42px;
+}
+.cbetimg-dice{
+  bottom: 8px;
+}
+.cbet-dice{
+  top: -8px;
+}
+.cbet-doubledice{
+  top: -5px;
+}
+.pgb{
+  top: -7px;
+  left: -1px;
+}
+.pgbimg{
+  bottom: 23px;
+}
+.pbl{
+  top: -1px;
+}
+.pd6{
+  top: 0;
+}
+.pog2{
+  top: 25px;
+}
+.imgog2{
+  margin-top: 57px;
+}
+.btn-red {
+  color: #fff;
+  background-color: #ff0000;
+  border-color: transparent;
+}
+.btn-red:focus,
+.btn-red.focus {
+  color: #fff;
+  background-color: #ff0000;
+  border-color: transparent;
+}
+.btn-red:hover {
+  color: #fff;
+  background-color: #ff0000;
+  border-color: transparent;
+}
+.btn-red:active,
+.btn-red.active,
+.open > .dropdown-toggle.btn-red {
+  color: #fff;
+  background-color: #ff0000;
+  border-color: transparent;
+}
+.btn-red:active:hover,
+.btn-red.active:hover,
+.open > .dropdown-toggle.btn-red:hover,
+.btn-red:active:focus,
+.btn-red.active:focus,
+.open > .dropdown-toggle.btn-red:focus,
+.btn-red:active.focus,
+.btn-red.active.focus,
+.open > .dropdown-toggle.btn-red.focus {
+  color: #fff;
+  background-color: #ff0000;
+  border-color: transparent;
+}
+.btn-black {
+  color: #fff;
+  background-color: #000000;
+  border-color: transparent;
+}
+.btn-black:focus,
+.btn-black.focus {
+  color: #fff;
+  background-color: #000000;
+  border-color: transparent;
+}
+.btn-black:hover {
+  color: #fff;
+  background-color: #000000;
+  border-color: transparent;
+}
+.btn-black:active,
+.btn-black.active,
+.open > .dropdown-toggle.btn-black {
+  color: #fff;
+  background-color: #000000;
+  border-color: transparent;
+}
+.btn-black:active:hover,
+.btn-black.active:hover,
+.open > .dropdown-toggle.btn-black:hover,
+.btn-black:active:focus,
+.btn-black.active:focus,
+.open > .dropdown-toggle.btn-black:focus,
+.btn-black:active.focus,
+.btn-black.active.focus,
+.open > .dropdown-toggle.btn-black.focus {
+  color: #fff;
+  background-color: #000000;
+  border-color: transparent;
+}
+.footer {
+  background: #000000;
+  font-size:12px;
+  color: #868686;
+  border-top: 1px solid #818285;
+}
+.bet-amt {
+  color: #ff0000;
+}
+.clear {
+  clear: both;
+}
+.dice-double {
+  margin-right: 2px;
+}
+.dice-block {
+  display: block;
+}
+/*.tombol-bet,*/
+.chips-bet{
+  text-align: center;
+  height: 46px;
+}
+
+.chips-bet{
+  display: inline-block;
+  margin-top: -36px;
+  position: relative;
+  border-radius: 100%;
+  -webkit-transition: all 0.5s; /* Safari */
+    transition: all 0.5s;
+}
+
+.chips-bet img{
+    width: 43px;
+    height: 43px;
+  -webkit-transition: all 0.5s; /* Safari */
+    transition: all 0.5s;
+}
+
+.chips-bet.tombol-aktif img{
+    width: 60px;
+    height: 60px;
+}
+
+.chips-bet p{
+  font-weight: bold;
+  position: absolute;
+  color: black;
+  font-size: 13px;
+  top: 13px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  font-family: OpenSans;
+}
+
+.chips-bet.tombol-aktif p{
+  font-size: 18px;
+  top: 18px;
+  font-weight: bold;
+  font-family: OpenSans;
+}
+.tombol-aktif img{
+  width: 60px !important; 
+  height: 60px !important;
+  margin-top: 0px;
+  vertical-align: middle;
+}
+.tombol-aktif p{
+  font-size: 17px;
+  top: -40px;
+}
+.bettingan, .bet-og {
+  padding: 5px 5px;
+  text-align: center;
+}
+.bet-og div,
+.bet-og strong {
+  text-align: center;
+}
+.rw-img-history li img {
+  margin-bottom: 2px;
+}
+.pchips{
+  position: relative;
+  top: -30px;
+  left: 2px;
+  font-weight: bold;
+  color: black;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.chips-container{
+  display: -webkit-inline-box;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 59px;
+  position: relative;
+  top: -15px;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.panel-body-2 {
+  padding: 15px 15px 70px 15px !important;
+}
+.floating-confirm {
+  left: 0;
+  position: fixed !important;
+  z-index: 9999 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  padding-bottom: 0 !important;
+  background-color: #2f2f2f !important;
+  height: 90px;
+  border: 0px;
+}
+.btnaction-container{
+  text-align: center;
+  top: -25px;
+  position: relative;
+}
+.btn-default.active,.btn-default:active,.open>.dropdown-toggle.btn-default{color:#333;background-color:#fff;border-color:#ccc}
+.btn.active, .btn:active {-webkit-box-shadow:none;box-shadow:none;}
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+  background-color: #fff;
+  color: #333;
+}
+.status-user {
+  color: #fff;
+  border-top: 1px solid #fff;
+  margin-top: 3px;
+}
+#statusbet {
+  color: #FF9334 !important;
+}
+.button{
+  text-align:center;
+  color:#fff;
+  padding:0 0 4px 0;
+  display:inline-block;
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size:24px;
+  font-weight: bold;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.65);
+}
+.button-reds{
+  background-color:#2ed4ea;
+}
+.button-orange {
+  background-color:#feaf35;
+}
+.button-orange:hover ,
+.button-reds:hover,
+.button-orange:active ,
+.button-reds:active,
+.button-orange:focus ,
+.button-reds:focus {
+  color: #fff;
+}
+
+.group-yellow{
+  height:165px;
+}
+#undo {
+  background-color: #FF4921;
+  color: #fff;
+  padding-right: 5px !important;
+  padding-left: 5px !important;
+  width: 100% !important;
+}
+
+.adi-strong {
+  display: block;
+  margin-top: -7px;
+}
+
+.adi-span {
+  display: block;
+  margin-bottom: -13px;
+  position: relative;
+  top: -6px;
+}
+
+.font-white {
+  color: #fff !important;
+}
+
+.font-black {
+  color: #000 !important;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+@media screen and (max-width: 370px) {
+  div.floating-time > div:nth-child(4) > p{
+      left: -6px;
+  }
+}
+@media screen and (min-width: 370px) {
+  div.floating-time > div:nth-child(4){
+      margin-left: 0px;
+  }
+}
