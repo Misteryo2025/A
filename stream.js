@@ -1,3 +1,5 @@
+console.log("JavaScript berhasil dimuat!");
+alert("JavaScript berhasil berjalan!");
 function toggleStream(url){
 	var stream = document.getElementById("stream");
 
