@@ -62,13 +62,13 @@
   <link rel="apple-touch-startup-image" sizes="1536x2008" href="https://bukti4dtrend.com/mobile/assets/img/splash/splash-screen-ipad-portrait-retina.png" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"> 
   <link rel="apple-touch-startup-image" sizes="1496x2048" href="https://bukti4dtrend.com/mobile/assets/img/splash/splash-screen-ipad-landscape-retina.png" media="(device-width: 768px) and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"> 
   <link rel="icon" type="image/png" href="https://bukti4dtrend.com/assets/img/aqx/favicon.png?v=1742595043"> 
-  <link href="https://bukti4dtrend.com/mobile/assets/css/normalize.css" rel="stylesheet" type="text/css"> 
-  <link href="https://bukti4dtrend.com/mobile/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"> 
-  <link href="https://bukti4dtrend.com/mobile/assets/css/main.css" rel="stylesheet" type="text/css"> 
-  <link rel="stylesheet" href="https://bukti4dtrend.com/css/live_streaming.css"> 
+  <link href="/css/normalize.css" rel="stylesheet" type="text/css"> 
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css"> 
+  <link href="/css/main.css" rel="stylesheet" type="text/css"> 
+  <link rel="stylesheet" href="/css/live_streaming.css"> 
   <link rel="stylesheet" href="https://s3-ap-southeast-1.amazonaws.com/idnpopups/retention/tingle.min.css"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"> 
-  <link rel="stylesheet" href="https://bukti4dtrend.com/assets/js/vendor/sweetalert/sweetalert.css"> 
+  <link rel="stylesheet" href="/css/sweetalert.css"> 
   <style>
     .panel-body-2 {
         padding: 15px 15px 70px 15px !important;
@@ -155,7 +155,7 @@
        <div class="col-xs-12" style="padding: 0"> 
         <div class="row margin-0"> 
          <div class="col-xs-1"> 
-          <a href="https://misteryo2025.github.io/A/1.jpg" class="deploy-back"></a> 
+          <a href="https://misteryo2025.github.io/A/css/1.jpg" class="deploy-back"></a> 
          </div> 
          <div class="col-xs-5 col-border-right"> 
           <table class="table-nth"> 
@@ -487,9 +487,9 @@
     </div> 
    </div> 
   </div> 
-  <script type="text/javascript" src="https:/css/Modern.min.js">
+  <script type="text/javascript" src="/css/Modern.js">
     </script> 
-  <script type="text/javascript" src="https:/css/bootstrap.min.js">
+  <script type="text/javascript" src="/css/bootstrap.min.js">
     </script> 
   <script type="text/javascript" src="/css/stream.js">
     </script> 
@@ -550,16 +550,16 @@
         function toggleStream() {
             var linkStreaming = $('#linkStreaming').val();
             if (onoff == 1) {
-                onoff = 0;
-                document.getElementById("stream").setAttribute("data", "");
-                document.getElementById("button-video").innerHTML = "TURN OFF VIDEO";
-            } else {
                 onoff = 1;
                 document.getElementById("stream").setAttribute("data", linkStreaming);
+                document.getElementById("button-video").innerHTML = "TURN OFF VIDEO";
+            } else {
+                onoff = 0;
+                document.getElementById("stream").setAttribute("data", "");
                 document.getElementById("button-video").innerHTML = "TURN ON VIDEO";
             }
         }
 
     </script> 
  </body>
-   </html>
+ </html>
