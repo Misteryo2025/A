@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid 4x20 YouTube Player (Auto Loop 9:16)</title>
+    <title>100 Pemutar YouTube Shorts Auto Play</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,20 +12,16 @@
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(10, 1fr); /* 10 kolom */
             gap: 5px;
-            max-width: 1200px;
+            max-width: 100%;
             margin: auto;
             margin-top: 20px;
         }
         .video-box {
-            background: #f0f0f0;
-            padding: 3px;
-            border-radius: 5px;
-            text-align: center;
             position: relative;
             width: 100%;
-            padding-bottom: 177.77%; /* Rasio 9:16 (tinggi lebih besar) */
+            padding-bottom: 177.77%; /* Rasio 9:16 */
             height: 0;
         }
         .video-box iframe {
@@ -35,27 +31,31 @@
             width: 100%;
             height: 100%;
         }
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(5, 1fr); /* 5 kolom di tablet */
+            }
+        }
         @media (max-width: 768px) {
             .grid-container {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr); /* 3 kolom di HP */
             }
         }
         @media (max-width: 480px) {
             .grid-container {
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP kecil */
             }
         }
     </style>
 </head>
 <body>
 
-    <h2>Video YouTube Auto Play & Loop (9:16)</h2>
+    <h2>100 Pemutar YouTube Shorts Auto Play & Looping</h2>
 
     <div class="grid-container">
-        <!-- 80 slot video -->
         <script>
-            let videoId = "UTRRw0tlLW0"; // ID video dari URL yang diberikan
-            for (let i = 1; i <= 80; i++) {
+            let videoId = "UTRRw0tlLW0"; // ID video dari URL yang Anda berikan
+            for (let i = 1; i <= 100; i++) {
                 document.write(`
                     <div class="video-box">
                         <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1" 
