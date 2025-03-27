@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>20 Pemutar YouTube Auto Play (Optimasi)</title>
+    <title>20 Pemutar YouTube Auto Play (4 Kolom Fix)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+            grid-template-columns: repeat(4, 1fr); /* Paksa 4 kolom di semua perangkat */
             gap: 5px;
             max-width: 100%;
             margin: auto;
@@ -31,31 +31,16 @@
             width: 100%;
             height: 100%;
         }
-        @media (max-width: 1024px) {
-            .grid-container {
-                grid-template-columns: repeat(3, 1fr); /* 3 kolom di tablet */
-            }
-        }
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
-            }
-        }
-        @media (max-width: 480px) {
-            .grid-container {
-                grid-template-columns: repeat(1, 1fr); /* 1 kolom di HP kecil */
-            }
-        }
     </style>
 </head>
 <body>
 
-    <h2>20 Pemutar YouTube Auto Play & Looping (Optimasi)</h2>
+    <h2>20 Pemutar YouTube Auto Play & Looping (4 Kolom Fix)</h2>
 
     <div class="grid-container">
         <script>
             let videoId = "UTRRw0tlLW0"; // ID video dari URL yang Anda berikan
-            let jumlahVideo = 20; // Kurangi jumlah video agar lebih ringan
+            let jumlahVideo = 20; // 4 kolom x 5 baris
             
             for (let i = 1; i <= jumlahVideo; i++) {
                 document.write(`
