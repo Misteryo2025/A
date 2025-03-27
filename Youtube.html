@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 Pemutar YouTube Shorts Auto Play</title>
+    <title>20 Pemutar YouTube Auto Play (Optimasi)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(10, 1fr); /* 10 kolom */
+            grid-template-columns: repeat(4, 1fr); /* 4 kolom */
             gap: 5px;
             max-width: 100%;
             margin: auto;
@@ -33,32 +33,34 @@
         }
         @media (max-width: 1024px) {
             .grid-container {
-                grid-template-columns: repeat(5, 1fr); /* 5 kolom di tablet */
+                grid-template-columns: repeat(3, 1fr); /* 3 kolom di tablet */
             }
         }
         @media (max-width: 768px) {
             .grid-container {
-                grid-template-columns: repeat(3, 1fr); /* 3 kolom di HP */
+                grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
             }
         }
         @media (max-width: 480px) {
             .grid-container {
-                grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP kecil */
+                grid-template-columns: repeat(1, 1fr); /* 1 kolom di HP kecil */
             }
         }
     </style>
 </head>
 <body>
 
-    <h2>100 Pemutar YouTube Shorts Auto Play & Looping</h2>
+    <h2>20 Pemutar YouTube Auto Play & Looping (Optimasi)</h2>
 
     <div class="grid-container">
         <script>
             let videoId = "UTRRw0tlLW0"; // ID video dari URL yang Anda berikan
-            for (let i = 1; i <= 100; i++) {
+            let jumlahVideo = 20; // Kurangi jumlah video agar lebih ringan
+            
+            for (let i = 1; i <= jumlahVideo; i++) {
                 document.write(`
                     <div class="video-box">
-                        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1" 
+                        <iframe loading="lazy" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&vq=small&playsinline=1" 
                         frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 `);
