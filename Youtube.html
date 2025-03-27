@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 4x15 YouTube Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        input {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 1200px;
+            margin: auto;
+            margin-top: 20px;
+        }
+        .video-box {
+            background: #f0f0f0;
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            height: 120px;
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Masukkan Link YouTube</h2>
+    <input type="text" id="youtubeUrl" placeholder="Tempelkan URL YouTube">
+    <button onclick="tampilkanVideo()">Tampilkan di Semua Layar</button>
+
+    <div class="grid-container">
+        <!-- 60 slot video -->
+        <script>
+            for (let i = 1; i <= 60; i++) {
+                document.write(`
+                    <div class="video-box">
+                        <div id="videoContainer${i}"></div>
+                    </div>
+                `);
+            }
+        </script>
+    </div>
+
+    <script>
+        function tampilkanVideo() {
+            let urlInput = document.getElementById("youtubeUrl").value;
+            let videoId = ekstrakVideoID(urlInput);
+
+            if (videoId) {
+                for (let i = 1; i <= 60; i++) {
+                    document.getElementById(`videoContainer${i}`).innerHTML = `
+                        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1" 
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+                }
+            } else {
+                alert("Masukkan URL YouTube yang valid!");
+            }
+        }
+
+        function ekstrakVideoID(url) {
+            let regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+            let match = url.match(regex);
+            return match ? match[1] : null;
+        }
+    </script>
+
+</body>
+</html>
