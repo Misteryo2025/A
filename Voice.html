@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TTS Suara Gina (Narakeet)</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+    textarea { width: 100%; height: 150px; padding: 10px; font-size: 16px; }
+    button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+    audio { margin-top: 20px; width: 100%; }
+  </style>
+</head>
+<body>
+  <h2>Text to Speech - Suara Gina (Narakeet)</h2>
+  <textarea id="textInput" placeholder="Ketik teks di sini..."></textarea><br>
+  <button onclick="convertText()">Convert</button>
+  <audio id="audioPlayer" controls></audio>
+
+  <script>
+    async function convertText() {
+      const text = document.getElementById("textInput").value;
+
+      const response = await fetch("https://api.narakeet.com/text-to-speech/mp3", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "YOUR_NARAKEET_API_KEY" // Ganti dengan API key kamu
+        },
+        body: JSON.stringify({
+          voice: "gina", // suara bahasa Indonesia
+          text: text
+        })
+      });
+
+      if (!response.ok) {
+        alert("Gagal memproses suara. Pastikan API key benar.");
+        return;
+      }
+
+      const blob = await response.blob();
+      const audioUrl = URL.createObjectURL(blob);
+      document.getElementById("audioPlayer").src = audioUrl;
+    }
+  </script>
+</body>
+</html>
