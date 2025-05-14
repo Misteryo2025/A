@@ -2,10 +2,10 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Game Mario Mini</title>
-  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+  <title>Mario Web Sederhana</title>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
   <style>
-    body { margin: 0; }
+    body { margin: 0; background: black; }
     canvas { display: block; margin: auto; }
   </style>
 </head>
@@ -18,39 +18,39 @@ const config = {
   height: 450,
   physics: {
     default: 'arcade',
-    arcade: { gravity: { y: 600 }, debug: false }
+    arcade: {
+      gravity: { y: 500 },
+      debug: false
+    }
   },
   scene: {
-    preload,
-    create,
-    update
+    preload: preload,
+    create: create,
+    update: update
   }
 };
 
-let player, platforms, cursors, enemies, coins, scoreText;
-let score = 0;
+let player;
+let cursors;
+let platforms;
 
 const game = new Phaser.Game(config);
 
 function preload() {
   this.load.image('sky', 'https://labs.phaser.io/assets/skies/sky4.png');
   this.load.image('ground', 'https://labs.phaser.io/assets/platform.png');
-  this.load.image('coin', 'https://labs.phaser.io/assets/sprites/coin.png');
-  this.load.spritesheet('mario', 'https://labs.phaser.io/assets/sprites/mario.png', { frameWidth: 32, frameHeight: 48 });
-  this.load.spritesheet('enemy', 'https://labs.phaser.io/assets/sprites/baddie.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('mario', 'https://labs.phaser.io/assets/sprites/mario.png', {
+    frameWidth: 32,
+    frameHeight: 48
+  });
 }
 
 function create() {
   this.add.image(400, 225, 'sky');
 
-  // Platform tanah
   platforms = this.physics.add.staticGroup();
   platforms.create(400, 430, 'ground').setScale(2).refreshBody();
-  platforms.create(600, 300, 'ground');
-  platforms.create(50, 250, 'ground');
-  platforms.create(750, 200, 'ground');
 
-  // Pemain
   player = this.physics.add.sprite(100, 300, 'mario');
   player.setBounce(0.2);
   player.setCollideWorldBounds(true);
@@ -75,36 +75,9 @@ function create() {
     repeat: -1
   });
 
-  // Koin
-  coins = this.physics.add.group({
-    key: 'coin',
-    repeat: 5,
-    setXY: { x: 120, y: 0, stepX: 120 }
-  });
-
-  coins.children.iterate(function (child) {
-    child.setBounceY(Phaser.Math.FloatBetween(0.3, 0.5));
-  });
-
-  // Musuh
-  enemies = this.physics.add.group();
-  const enemy = enemies.create(400, 0, 'enemy');
-  enemy.setBounce(1);
-  enemy.setCollideWorldBounds(true);
-  enemy.setVelocityX(100);
-
-  // Skor
-  scoreText = this.add.text(16, 16, 'Skor: 0', { fontSize: '20px', fill: '#fff' });
-
-  // Input
   cursors = this.input.keyboard.createCursorKeys();
 
-  // Collider
   this.physics.add.collider(player, platforms);
-  this.physics.add.collider(coins, platforms);
-  this.physics.add.collider(enemies, platforms);
-  this.physics.add.collider(player, enemies, hitEnemy, null, this);
-  this.physics.add.overlap(player, coins, collectCoin, null, this);
 }
 
 function update() {
@@ -121,26 +94,6 @@ function update() {
 
   if (cursors.up.isDown && player.body.touching.down) {
     player.setVelocityY(-330);
-  }
-}
-
-function collectCoin(player, coin) {
-  coin.disableBody(true, true);
-  score += 10;
-  scoreText.setText('Skor: ' + score);
-}
-
-function hitEnemy(player, enemy) {
-  if (player.body.velocity.y > 0) {
-    enemy.disableBody(true, true);
-    score += 20;
-    scoreText.setText('Skor: ' + score);
-    player.setVelocityY(-200); // efek mantul ke atas
-  } else {
-    this.physics.pause();
-    player.setTint(0xff0000);
-    player.anims.play('turn');
-    scoreText.setText('Game Over! Skor: ' + score);
   }
 }
 </script>
